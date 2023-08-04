@@ -1,0 +1,241 @@
+Project Summaries¶
+Summaries and links for the most relevant projects in the space of Python installation and packaging.
+
+PyPA Projects
+bandersnatch
+Issues | GitHub | PyPI
+
+bandersnatch is a PyPI mirroring client designed to efficiently create a complete mirror of the contents of PyPI. Organizations thus save bandwidth and latency on package downloads (especially in the context of automated tests) and to prevent heavily loading PyPI’s Content Delivery Network (CDN).
+
+build
+Docs | Issues | GitHub | PyPI
+
+build is a PEP 517 compatible Python package builder. It provides a CLI to build packages, as well as a Python API.
+
+cibuildwheel
+Docs | Issues | GitHub | PyPI | Discussions | Discord #cibuildwheel
+
+cibuildwheel is a Python package that builds wheels for all common platforms and Python versions on most CI systems. Also see multibuild.
+
+distlib
+Docs | Issues | GitHub | PyPI
+
+distlib is a library which implements low-level functions that relate to packaging and distribution of Python software. distlib implements several relevant PEPs (Python Enhancement Proposal standards) and is useful for developers of third-party packaging tools to make and upload binary and source distributions, achieve interoperability, resolve dependencies, manage package resources, and do other similar functions.
+
+Unlike the stricter packaging project (below), which specifically implements modern Python packaging interoperability standards, distlib also attempts to provide reasonable fallback behaviours when asked to handle legacy packages and metadata that predate the modern interoperability standards and fall into the subset of packages that are incompatible with those standards.
+
+flit
+Docs | Issues | PyPI
+
+Flit provides a simple way to create and upload pure Python packages and modules to PyPI. It focuses on making the easy things easy for packaging. Flit can generate a configuration file to quickly set up a simple project, build source distributions and wheels, and upload them to PyPI.
+
+Flit uses pyproject.toml to configure a project. Flit does not rely on tools such as setuptools to build distributions, or twine to upload them to PyPI. Flit requires Python 3, but you can use it to distribute modules for Python 2, so long as they can be imported on Python 3.
+
+hatch
+Docs | GitHub | PyPI
+
+Hatch is a unified command-line tool meant to conveniently manage dependencies and environment isolation for Python developers. Python package developers use Hatch and its build backend Hatchling to configure, version, specify dependencies for, and publish packages to PyPI. Its plugin system allows for easily extending functionality.
+
+packaging
+Docs | Issues | GitHub | PyPI
+
+Core utilities for Python packaging used by pip and setuptools.
+
+The core utilities in the packaging library handle version handling, specifiers, markers, requirements, tags, and similar attributes and tasks for Python packages. Most Python users rely on this library without needing to explicitly call it; developers of the other Python packaging, distribution, and installation tools listed here often use its functionality to parse, discover, and otherwise handle dependency attributes.
+
+This project specifically focuses on implementing the modern Python packaging interoperability standards defined at PyPA specifications, and will report errors for sufficiently old legacy packages that are incompatible with those standards. In contrast, the distlib project is a more permissive library that attempts to provide a plausible reading of ambiguous metadata in cases where packaging will instead report on error.
+
+pip
+Docs | Issues | GitHub | PyPI
+
+The most popular tool for installing Python packages, and the one included with modern versions of Python.
+
+It provides the essential core features for finding, downloading, and installing packages from PyPI and other Python package indexes, and can be incorporated into a wide range of development workflows via its command-line interface (CLI).
+
+Pipenv
+Docs | Source | Issues | PyPI
+
+Pipenv is a project that aims to bring the best of all packaging worlds to the Python world. It harnesses Pipfile, pip, and virtualenv into one single toolchain. It can autoimport requirements.txt and also check for CVEs in Pipfile using safety.
+
+Pipenv aims to help users manage environments, dependencies, and imported packages on the command line. It also works well on Windows (which other tools often underserve), makes and checkes file hashes, to ensure compliance with hash-locked dependency specifiers, and eases uninstallation of packages and dependencies.
+
+Pipfile
+Source
+
+Pipfile and its sister Pipfile.lock are a higher-level application-centric alternative to pip’s lower-level requirements.txt file.
+
+pipx
+Docs | GitHub | PyPI
+
+pipx is a tool to install and run Python command-line applications without causing dependency conflicts with other packages installed on the system.
+
+Python Packaging User Guide
+Docs | Issues | GitHub
+
+This guide!
+
+readme_renderer
+GitHub and docs | PyPI
+
+readme_renderer is a library that package developers use to render their user documentation (README) files into HTML from markup languages such as Markdown or reStructuredText. Developers call it on its own or via twine, as part of their release management process, to check that their package descriptions will properly display on PyPI.
+
+setuptools
+Docs | Issues | GitHub | PyPI
+
+setuptools (which includes easy_install) is a collection of enhancements to the Python distutils that allow you to more easily build and distribute Python distributions, especially ones that have dependencies on other packages.
+
+distribute was a fork of setuptools that was merged back into setuptools (in v0.7), thereby making setuptools the primary choice for Python packaging.
+
+trove-classifiers
+Issues | GitHub | PyPI
+
+trove-classifiers is the canonical source for classifiers on PyPI, which project maintainers use to systematically describe their projects so that users can better find projects that match their needs on the PyPI.
+
+The trove-classifiers package contains a list of valid classifiers and deprecated classifiers (which are paired with the classifiers that replace them). Use this package to validate classifiers used in packages intended for uploading to PyPI. As this list of classifiers is published as code, you can install and import it, giving you a more convenient workflow compared to referring to the list published on PyPI. The issue tracker for the project hosts discussions on proposed classifiers and requests for new classifiers.
+
+twine
+Docs | Issues | GitHub | PyPI
+
+Twine is the primary tool developers use to upload packages to the Python Package Index or other Python package indexes. It is a command-line program that passes program files and metadata to a web API. Developers use it because it’s the official PyPI upload tool, it’s fast and secure, it’s maintained, and it reliably works.
+
+virtualenv
+Docs | Issues | GitHub | PyPI
+
+virtualenv is a tool which uses the command-line path environment variable to create isolated Python Virtual Environments, much as venv does. virtualenv provides additional functionality, compared to venv, by supporting Python 2.7 and by providing convenient features for configuring, maintaining, duplicating, and troubleshooting the virtual environments. For more information, see the section on Creating Virtual Environments.
+
+Warehouse
+Docs | Issues | GitHub
+
+The current codebase powering the Python Package Index (PyPI). It is hosted at pypi.org. The default source for pip downloads.
+
+wheel
+Docs | Issues | GitHub | PyPI
+
+Primarily, the wheel project offers the bdist_wheel setuptools extension for creating wheel distributions. Additionally, it offers its own command line utility for creating and installing wheels.
+
+See also auditwheel, a tool that package developers use to check and fix Python packages they are making in the binary wheel format. It provides functionality to discover dependencies, check metadata for compliance, and repair the wheel and metadata to properly link and include external shared libraries in a package.
+
+Non-PyPA Projects
+buildout
+Docs | Issues | PyPI | GitHub
+
+Buildout is a Python-based build system for creating, assembling and deploying applications from multiple parts, some of which may be non-Python-based. It lets you create a buildout configuration and reproduce the same software later.
+
+conda
+Docs
+
+conda is the package management tool for Anaconda Python installations. Anaconda Python is a distribution from Anaconda, Inc specifically aimed at the scientific community, and in particular on Windows where the installation of binary extensions is often difficult.
+
+Conda is a completely separate tool from pip, virtualenv and wheel, but provides many of their combined features in terms of package management, virtual environment management and deployment of binary extensions.
+
+Conda does not install packages from PyPI and can install only from the official Anaconda repositories, or anaconda.org (a place for user-contributed conda packages), or a local (e.g. intranet) package server. However, note that pip can be installed into, and work side-by-side with conda for managing distributions from PyPI. Also, conda skeleton is a tool to make Python packages installable by conda by first fetching them from PyPI and modifying their metadata.
+
+devpi
+Docs | Issues | PyPI
+
+devpi features a powerful PyPI-compatible server and PyPI proxy cache with a complementary command line tool to drive packaging, testing and release activities with Python. devpi also provides a browsable and searchable web interface.
+
+enscons
+Source | Issues | PyPI
+
+Enscons is a Python packaging tool based on SCons. It builds pip-compatible source distributions and wheels without using distutils or setuptools, including distributions with C extensions. Enscons has a different architecture and philosophy than distutils. Rather than adding build features to a Python packaging system, enscons adds Python packaging to a general purpose build system. Enscons helps you to build sdists that can be automatically built by pip, and wheels that are independent of enscons.
+
+Hashdist
+Docs | GitHub
+
+Hashdist is a library for building non-root software distributions. Hashdist is trying to be “the Debian of choice for cases where Debian technology doesn’t work”. The best way for Pythonistas to think about Hashdist may be a more powerful hybrid of virtualenv and buildout. It is aimed at solving the problem of installing scientific software, and making package distribution stateless, cached, and branchable. It is used by some researchers but has been lacking in maintenance since 2016.
+
+meson-python
+Docs | GitHub
+
+meson-python is a build backend that uses the Meson build system. It enables Python package authors to use Meson as the build system for their package. It supports a wide variety of languages, including C, and is able to fill the needs of most complex build configurations.
+
+multibuild
+GitHub
+
+Multibuild is a set of CI scripts for building and testing Python wheels for Linux, macOS, and (less flexibly) Windows. Also see cibuildwheel.
+
+pdm
+Docs | GitHub | PyPI
+
+PDM is a modern Python package manager. It uses pyproject.toml to store project metadata as defined in PEP 621.
+
+pex
+Docs | GitHub | PyPI
+
+pex is both a library and tool for generating .pex (Python EXecutable) files, standalone Python environments in the spirit of virtualenv. .pex files are just carefully constructed zip files with a #!/usr/bin/env python and special __main__.py, and are designed to make deployment of Python applications as simple as cp.
+
+pip-tools
+Docs | GitHub | PyPI
+
+pip-tools is a suite of tools meant for Python system administrators and release managers who particularly want to keep their builds deterministic yet stay up to date with new versions of their dependencies. Users can specify particular release of their dependencies via hash, conveniently make a properly formatted list of requirements from information in other parts of their program, update all dependencies (a feature pip currently does not provide), and create layers of constraints for the program to obey.
+
+piwheels
+Website | Docs | GitHub
+
+piwheels is a website, and software underpinning it, that fetches source code distribution packages from PyPI and compiles them into binary wheels that are optimized for installation onto Raspberry Pi computers. Raspberry Pi OS pre-configures pip to use piwheels.org as an additional index to PyPI.
+
+poetry
+Docs | GitHub | PyPI
+
+poetry is a command-line tool to handle dependency installation and isolation as well as building and packaging of Python packages. It uses pyproject.toml and, instead of depending on the resolver functionality within pip, provides its own dependency resolver. It attempts to speed users’ experience of installation and dependency resolution by locally caching metadata about dependencies.
+
+pypiserver
+Docs | GitHub | PyPI
+
+pypiserver is a minimalist application that serves as a private Python package index within organizations, implementing a simple API and browser interface. You can upload private packages using standard upload tools, and users can download and install them with pip, without publishing them publicly. Organizations who use pypiserver usually download packages both from pypiserver and from PyPI.
+
+PyScaffold
+Docs | GitHub | PyPI
+
+PyScaffold is a project generator for bootstrapping Python packages, ready to be shared on PyPI and installable via pip. It relies on a set of sane default configurations for established tools (such as setuptools, pytest and Sphinx) to provide a productive environment so developers can start coding right away. PyScaffold can also be used with existing projects to make packaging easier.
+
+scikit-build
+Docs | GitHub | PyPI
+
+Scikit-build is an improved build system generator for CPython C/C++/Fortran/Cython extensions that integrates with setuptools, wheel and pip. It internally uses cmake (available on PyPI) to provide better support for additional compilers, build systems, cross compilation, and locating dependencies and their associated build requirements. To speed up and parallelize the build of large projects, the user can install ninja (also available on PyPI).
+
+shiv
+Docs | GitHub | PyPI
+
+shiv is a command line utility for building fully self contained Python zipapps as outlined in PEP 441, but with all their dependencies included. Its primary goal is making distributing Python applications and command line tools fast & easy.
+
+Spack
+Docs | GitHub | Paper | Slides
+
+A flexible package manager designed to support multiple versions, configurations, platforms, and compilers. Spack is like Homebrew, but packages are written in Python and parameterized to allow easy swapping of compilers, library versions, build options, etc. Arbitrarily many versions of packages can coexist on the same system. Spack was designed for rapidly building high performance scientific applications on clusters and supercomputers.
+
+Spack is not in PyPI (yet), but it requires no installation and can be used immediately after cloning from GitHub.
+
+zest.releaser
+Docs | GitHub | PyPI
+
+zest.releaser is a Python package release tool providing an abstraction layer on top of twine. Python developers use zest.releaser to automate incrementing package version numbers, updating changelogs, tagging releases in source control, and uploading new packages to PyPI.
+
+Standard Library Projects
+ensurepip
+Docs | Issues
+
+A package in the Python Standard Library that provides support for bootstrapping pip into an existing Python installation or virtual environment. In most cases, end users won’t use this module, but rather it will be used during the build of the Python distribution.
+
+distutils
+Docs | Issues
+
+The original Python packaging system, added to the standard library in Python 2.0.
+
+Due to the challenges of maintaining a packaging system where feature updates are tightly coupled to language runtime updates, direct usage of distutils is now actively discouraged, with setuptools being the preferred replacement. setuptools not only provides features that plain distutils doesn’t offer (such as dependency declarations and entry point declarations), it also provides a consistent build interface and feature set across all supported Python versions.
+
+venv
+Docs | Issues
+
+A package in the Python Standard Library (starting with Python 3.3) for creating Virtual Environments. For more information, see the section on Creating Virtual Environments.
+
+© Copyright 2013–2020, PyPA.
+This page is licensed under the Python Software Foundation License Version 2.
+Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
+
+The Python Software Foundation is a non-profit corporation. Please donate.
+
+Last updated on Aug 03, 2023. Found a bug?
+Created using Sphinx 4.5.0.
+  v: lates
