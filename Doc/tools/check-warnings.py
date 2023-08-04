@@ -61,8 +61,7 @@ def fail_if_regression(
         if rst.parts[1] not in EXCLUDE_SUBDIRS
     }
     should_be_clean = all_rst - files_with_expected_nits - EXCLUDE_FILES
-    problem_files = sorted(should_be_clean & files_with_nits)
-    if problem_files:
+    if problem_files := sorted(should_be_clean & files_with_nits):
         print("\nError: must not contain warnings:\n")
         for filename in problem_files:
             print(filename)
@@ -81,8 +80,7 @@ def fail_if_improved(
     We may have fixed warnings in some files so that the files are now completely clean.
     Good news! Let's add them to .nitignore to prevent regression.
     """
-    files_with_no_nits = files_with_expected_nits - files_with_nits
-    if files_with_no_nits:
+    if files_with_no_nits := files_with_expected_nits - files_with_nits:
         print("\nCongratulations! You improved:\n")
         for filename in sorted(files_with_no_nits):
             print(filename)
